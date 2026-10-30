@@ -1,0 +1,17 @@
+{
+ "format": 1,
+ "build": "548a216c322be1f10ae3cd407bb5b839",
+ "kdf": {
+  "name": "PBKDF2",
+  "hash": "SHA-256",
+  "iterations": 600000,
+  "salt": "wWtt9ggjaGsYVTduyisBbA=="
+ },
+ "cipher": {
+  "name": "AES-GCM",
+  "length": 256,
+  "chunk": 1048576
+ },
+ "check": "FWN/CDjvksx+7K/hrCXUHorQ8OZ+eXwxTOhRBJuQheacTxgNuPm83iBoF5A=",
+ "index": "9ab5fafbb9a96d861a21bfa9e19951ed"
+}

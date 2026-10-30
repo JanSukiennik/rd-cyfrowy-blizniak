@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-BgGDnNYv7c/Y2RsUCskHVgu4qD+6YI6qBnBOzbg+2dU='; style-src 'sha256-Bk/z/q052fFxmjOuaRKyITulj0OUVPDWe8Ryhw0CnsM='; img-src 'self'; connect-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+<title>Cyfrowy bliźniak biura R&amp;D</title>
+<meta name="description" content="Model BIM, chmura punktów i siatka 3D biura R&amp;D, zbudowane ze skanu 3D. Dostęp chroniony hasłem.">
+<link rel="canonical" href="https://jansukiennik.github.io/rd-cyfrowy-blizniak/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:url" content="https://jansukiennik.github.io/rd-cyfrowy-blizniak/">
+<meta property="og:title" content="Cyfrowy bliźniak biura R&amp;D">
+<meta property="og:description" content="Model BIM, chmura punktów i siatka 3D biura R&amp;D, zbudowane ze skanu 3D. Dostęp chroniony hasłem.">
+<meta property="og:image" content="https://jansukiennik.github.io/rd-cyfrowy-blizniak/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo R&amp;D i napis: Cyfrowy bliźniak biura R&amp;D">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="brand/favicon.ico" sizes="any">
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="brand/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<style>:root {
+  color-scheme: light;
+  --paper: #ffffff;
+  --ink: #1a1a1a;
+  --ink-70: #5f5f5f;
+  --ink-12: #e4e4e4;
+  --ink-06: #f3f3f3;
+  --ink-hover: #333333;
+  --font: 'Century Gothic', Futura, Avenir, 'Avenir Next', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --margin: 40px;
+  --focus-ring: 2px solid var(--ink);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 17px/1.6 var(--font);
+  font-synthesis: none;
+  hyphens: none;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+[hidden] { display: none !important; }
+:focus-visible { outline: var(--focus-ring); outline-offset: 2px; }
+p, h1, h2 { margin: 0; }
+.lk {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 calc(var(--margin) + env(safe-area-inset-right, 0px)) 0 calc(var(--margin) + env(safe-area-inset-left, 0px));
+}
+.lk-head { display: flex; align-items: center; height: 56px; flex: none; }
+.lk-logo { display: block; height: 20px; width: auto; }
+.lk-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 440px;
+  padding: 48px 0 64px;
+}
+.lk-eyebrow {
+  font: 400 12px/16px var(--font);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-feature-settings: 'case' 1;
+  color: var(--ink-70);
+  margin-bottom: 16px;
+}
+.lk-title { font: 400 clamp(32px, 3.2vw, 48px)/1.12 var(--font); letter-spacing: -0.01em; margin-bottom: 16px; }
+.lk-lede { color: var(--ink-70); margin-bottom: 32px; }
+.lk-note:not(:empty) { font: 400 15px/22px var(--font); border-left: 2px solid var(--ink); padding: 2px 0 2px 12px; margin-bottom: 24px; }
+.lk-label { display: block; font: 400 14px/20px var(--font); margin-bottom: 8px; }
+.lk-field { display: flex; border: 1px solid var(--ink); background: var(--paper); }
+.lk-field:focus-within { outline: var(--focus-ring); outline-offset: 2px; }
+.lk-input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 17px/24px var(--font);
+}
+.lk-input:focus { outline: none; }
+.lk-input[aria-invalid='true'] { box-shadow: inset 0 -2px 0 var(--ink); }
+.lk-toggle {
+  flex: none;
+  min-width: 72px;
+  margin: 0;
+  border: 0;
+  border-left: 1px solid var(--ink);
+  border-radius: 0;
+  padding: 0 14px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 14px/20px var(--font);
+  cursor: pointer;
+}
+.lk-toggle:hover { background: var(--ink-06); }
+.lk-toggle:focus-visible { outline-offset: -4px; }
+.lk-error { min-height: 24px; margin-top: 8px; font: 400 15px/22px var(--font); }
+.lk-error:not(:empty) { border-left: 2px solid var(--ink); padding-left: 12px; }
+.lk-submit {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  margin: 16px 0 0;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  padding: 0 20px;
+  background: var(--ink);
+  color: var(--paper);
+  font: 400 15px/20px var(--font);
+  cursor: pointer;
+}
+.lk-submit:hover { background: var(--ink-hover); border-color: var(--ink-hover); }
+.lk-submit[aria-disabled='true'] { background: var(--ink-70); border-color: var(--ink-70); cursor: progress; }
+.lk-small { font: 400 13px/18px var(--font); letter-spacing: 0.02em; color: var(--ink-70); margin-top: 16px; }
+.lk-contact { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--ink-12); }
+.lk-alt p { margin-bottom: 16px; }
+.lk-h2 { font: 400 22px/1.3 var(--font); margin-bottom: 16px; }
+.lk-url {
+  display: block;
+  width: 100%;
+  height: 46px;
+  margin: 0;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  padding: 0 12px;
+  background: var(--ink-06);
+  color: var(--ink);
+  font: 400 15px/22px var(--font);
+}
+.lk-link { color: var(--ink); text-underline-offset: 3px; }
+.lk-vh {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+@media (max-width: 767px) {
+  :root { --margin: 16px; }
+  body { font-size: 16px; line-height: 1.55; }
+  .lk-main { padding: 32px 0 48px; justify-content: flex-start; }
+  .lk-eyebrow { font-size: 14px; line-height: 18px; letter-spacing: 0.1em; }
+  .lk-title { font-size: 30px; line-height: 1.15; }
+  .lk-label, .lk-toggle { font-size: 15px; }
+  .lk-small { font-size: 14px; line-height: 20px; }
+  .lk-h2 { font-size: 20px; }
+}
+@media (pointer: coarse) {
+  .lk-toggle { min-width: 80px; }
+}</style>
+</head>
+<body>
+<div class="lk">
+<header class="lk-head"><img class="lk-logo" src="brand/rd_logo_black.svg" alt="R&amp;D – Retail and Development" width="52" height="20"></header>
+<main class="lk-main" id="main">
+<p class="lk-eyebrow">Dostęp chroniony hasłem</p>
+<h1 class="lk-title">Cyfrowy bliźniak biura R&amp;D</h1>
+<noscript><p class="lk-lede">Ta strona wymaga włączonej obsługi JavaScript.</p></noscript>
+<p class="lk-lede" id="lede" hidden>Wpisz hasło, aby otworzyć model biura i pliki do pobrania.</p>
+<p class="lk-note" id="note" role="status" aria-live="polite"></p>
+<form class="lk-form" id="form" novalidate hidden>
+<input type="text" name="username" autocomplete="username" value="Cyfrowy bliźniak biura R&amp;D" hidden>
+<label class="lk-label" for="pw">Hasło</label>
+<div class="lk-field">
+<input class="lk-input" id="pw" name="password" type="password" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false" required aria-describedby="pw-error">
+<button class="lk-toggle" id="toggle" type="button" aria-controls="pw"><span id="toggle-text">Pokaż</span><span class="lk-vh"> hasło</span></button>
+</div>
+<p class="lk-error" id="pw-error" aria-live="polite"></p>
+<button class="lk-submit" id="submit" type="submit">Wejdź</button>
+<p class="lk-small" id="remember">Hasło zostanie zapamiętane na tym urządzeniu do 30 dni.</p>
+</form>
+<section class="lk-alt" id="unsupported" aria-labelledby="unsupported-title" hidden>
+<h2 class="lk-h2" id="unsupported-title">Otwórz link w innej przeglądarce</h2>
+<p>Ta strona jest zaszyfrowana. Do jej odczytania potrzebne są funkcje, których ta przeglądarka nie udostępnia. Zdarza się to w przeglądarkach wbudowanych w aplikacje i w oknach prywatnych.</p>
+<p>Otwórz link w Safari, Chrome, Edge lub Firefox w zwykłym oknie. Jeśli to nie pomoże, zaktualizuj przeglądarkę.</p>
+<label class="lk-label" for="url">Adres strony</label>
+<input class="lk-url" id="url" type="text" readonly>
+<button class="lk-submit lk-copy" id="copy" type="button">Kopiuj link</button>
+<p class="lk-small" id="copy-status" role="status" aria-live="polite"></p>
+</section>
+<section class="lk-alt" id="framed" aria-labelledby="framed-title" hidden>
+<h2 class="lk-h2" id="framed-title">Otwórz stronę w osobnym oknie</h2>
+<p>Ze względów bezpieczeństwa logowanie nie działa w ramce innej strony.</p>
+<p><a class="lk-link" href="https://jansukiennik.github.io/rd-cyfrowy-blizniak/" target="_blank" rel="noopener">Otwórz stronę logowania</a></p>
+</section>
+<p class="lk-small lk-contact">Nie mają Państwo hasła? Prosimy o wiadomość na adres hello@rd.studio.</p>
+</main>
+</div>
+<script>(() => {
+  'use strict';
+  // Strings come from lock/strings.pl.json (injected at lock time).
+  const S = {"meta":{"title":"Cyfrowy bliźniak biura R&D","description":"Model BIM, chmura punktów i siatka 3D biura R&D, zbudowane ze skanu 3D. Dostęp chroniony hasłem.","og_image_alt":"Logo R&D i napis: Cyfrowy bliźniak biura R&D","logo_alt":"R&D – Retail and Development","noscript":"Ta strona wymaga włączonej obsługi JavaScript."},"login":{"eyebrow":"Dostęp chroniony hasłem","title":"Cyfrowy bliźniak biura R&D","lede":"Wpisz hasło, aby otworzyć model biura i pliki do pobrania.","label":"Hasło","show":"Pokaż","hide":"Ukryj","toggle_suffix":" hasło","submit":"Wejdź","busy":"Sprawdzam hasło…","opening":"Otwieram stronę…","error_empty":"Wpisz hasło.","error_wrong":"Nieprawidłowe hasło. Sprawdź je i spróbuj ponownie.","error_network":"Nie udało się połączyć ze stroną. Sprawdź połączenie z internetem i spróbuj ponownie.","error_generic":"Nie udało się otworzyć strony. Odśwież ją i spróbuj ponownie.","reopen_failed":"Nie udało się otworzyć strony mimo zapamiętanego hasła. Wpisz hasło ponownie.","remember":"Hasło zostanie zapamiętane na tym urządzeniu do 30 dni.","contact":"Nie mają Państwo hasła? Prosimy o wiadomość na adres hello@rd.studio.","logged_out":"Wylogowano. Hasło zostało usunięte z tego urządzenia.","expired":"Minęło 30 dni od ostatniego logowania. Wpisz hasło ponownie.","changed":"Hasło do strony zostało zmienione. Wpisz nowe hasło.","updating":"Strona jest właśnie aktualizowana. Spróbuj ponownie za kilka minut."},"unsupported":{"title":"Otwórz link w innej przeglądarce","body":"Ta strona jest zaszyfrowana. Do jej odczytania potrzebne są funkcje, których ta przeglądarka nie udostępnia. Zdarza się to w przeglądarkach wbudowanych w aplikacje i w oknach prywatnych.","action":"Otwórz link w Safari, Chrome, Edge lub Firefox w zwykłym oknie. Jeśli to nie pomoże, zaktualizuj przeglądarkę.","url_label":"Adres strony","copy":"Kopiuj link","copied":"Link skopiowany.","copy_failed":"Nie udało się skopiować. Zaznacz adres powyżej i skopiuj go ręcznie."},"framed":{"title":"Otwórz stronę w osobnym oknie","body":"Ze względów bezpieczeństwa logowanie nie działa w ramce innej strony.","link":"Otwórz stronę logowania"},"notfound":{"title":"Przekierowanie","link":"Przejdź do strony logowania"},"og":{"title":"Cyfrowy bliźniak biura R&D","subtitle":"Dostęp chroniony hasłem"}};
+  const MAX_AGE = 30 * 24 * 3600 * 1000;
+  const CLOCK_SKEW = 24 * 3600 * 1000;
+  const GUARD_MS = 10000;
+  const CHECK_TEXT = 'rd-lock check v1';
+  const enc = new TextEncoder();
+  const PREFIX = enc.encode('rd-lock/1\u0000');
+  const scope = new URL('./', location.href);
+  const DB_NAME = 'rd-lock:' + scope.pathname;
+  const GUARD_KEY = 'rd-lock:reload:' + scope.pathname;
+  const $ = (id) => document.getElementById(id);
+  const form = $('form');
+  const input = $('pw');
+  const submit = $('submit');
+  const errorEl = $('pw-error');
+  const note = $('note');
+  const controlled = !!(navigator.serviceWorker && navigator.serviceWorker.controller);
+  let busy = false;
+  let swReady = null;
+
+  class UiError extends Error {}
+
+  // ---------------------------------------------------------------------------------------------- views
+  function show(view) {
+    $('lede').hidden = view !== 'form';
+    form.hidden = view !== 'form';
+    $('unsupported').hidden = view !== 'unsupported';
+    $('framed').hidden = view !== 'framed';
+  }
+
+  function setNote(text) {
+    note.textContent = text || '';
+  }
+
+  function showForm(text) {
+    show('form');
+    setNote(text);
+    if (matchMedia('(pointer: fine)').matches) input.focus();
+  }
+
+  function showUnsupported() {
+    busy = false;
+    setNote('');
+    show('unsupported');
+    const url = new URL(location.href);
+    url.searchParams.delete('wyloguj');
+    $('url').value = url.href;
+  }
+
+  function showError(text) {
+    // clear first so a repeated message is announced again
+    errorEl.textContent = '';
+    input.setAttribute('aria-invalid', 'true');
+    setTimeout(() => (errorEl.textContent = text), 50);
+  }
+
+  function clearError() {
+    errorEl.textContent = '';
+    input.removeAttribute('aria-invalid');
+  }
+
+  function setBusy(on) {
+    busy = on;
+    form.setAttribute('aria-busy', on ? 'true' : 'false');
+    submit.setAttribute('aria-disabled', on ? 'true' : 'false');
+    submit.textContent = on ? S.login.busy : S.login.submit;
+    input.readOnly = on;
+  }
+
+  // ---------------------------------------------------------------------------------------------- storage
+  function idb(mode, fn) {
+    return new Promise((resolve, reject) => {
+      const open = indexedDB.open(DB_NAME, 1);
+      open.onupgradeneeded = () => open.result.createObjectStore('kv');
+      open.onerror = () => reject(open.error);
+      open.onblocked = () => reject(new Error('blocked'));
+      open.onsuccess = () => {
+        const db = open.result;
+        let tx;
+        try {
+          tx = db.transaction('kv', mode);
+        } catch (err) {
+          db.close();
+          reject(err);
+          return;
+        }
+        const req = fn(tx.objectStore('kv'));
+        let result;
+        if (req && 'onsuccess' in req) req.onsuccess = () => (result = req.result);
+        tx.oncomplete = () => {
+          db.close();
+          resolve(result);
+        };
+        tx.onerror = tx.onabort = () => {
+          db.close();
+          reject(tx.error);
+        };
+      };
+    });
+  }
+  const getRec = (k) => idb('readonly', (s) => s.get(k));
+  const putRec = (k, v) => idb('readwrite', (s) => s.put(v, k));
+  const delRec = (k) => idb('readwrite', (s) => s.delete(k));
+
+  function guardActive() {
+    try {
+      const t = Number(sessionStorage.getItem(GUARD_KEY));
+      return t > 0 && Date.now() - t < GUARD_MS;
+    } catch {
+      return true; // no sessionStorage: never auto-reload
+    }
+  }
+  function setGuard() {
+    try {
+      sessionStorage.setItem(GUARD_KEY, String(Date.now()));
+    } catch {}
+  }
+  function clearGuard() {
+    try {
+      sessionStorage.removeItem(GUARD_KEY);
+    } catch {}
+  }
+
+  // ---------------------------------------------------------------------------------------------- crypto
+  function supported() {
+    return (
+      window.isSecureContext === true &&
+      'serviceWorker' in navigator &&
+      !!navigator.serviceWorker &&
+      !!window.crypto &&
+      !!crypto.subtle &&
+      !!window.indexedDB &&
+      typeof ReadableStream === 'function' &&
+      typeof DecompressionStream === 'function'
+    );
+  }
+
+  function b64(s) {
+    const bin = atob(s);
+    const out = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+
+  async function deriveKey(password, kdf) {
+    if (!kdf || kdf.name !== 'PBKDF2' || kdf.hash !== 'SHA-256' || !(kdf.iterations >= 100000)) throw new UiError(S.login.error_generic);
+    const base = await crypto.subtle.importKey('raw', enc.encode(password.normalize('NFC')), 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey(
+      { name: 'PBKDF2', hash: 'SHA-256', salt: b64(kdf.salt), iterations: kdf.iterations },
+      base,
+      { name: 'AES-GCM', length: 256 },
+      false, // non-extractable
+      ['decrypt'],
+    );
+  }
+
+  async function checkKey(key, checkB64) {
+    try {
+      const blob = b64(checkB64);
+      const aad = new Uint8Array(PREFIX.length + 5);
+      aad.set(PREFIX);
+      aad.set(enc.encode('check'), PREFIX.length);
+      const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: blob.subarray(0, 12), additionalData: aad, tagLength: 128 }, key, blob.subarray(12));
+      return new TextDecoder().decode(pt) === CHECK_TEXT;
+    } catch {
+      return false;
+    }
+  }
+
+  /**
+   * A direct file link opened without a key comes back from 404.html as #plik=<path inside the site> (T60). Only plain
+   * relative paths are accepted (no dot segments, encoded dots/slashes or schemes), so this is never an open redirect.
+   * Downloads (attachments) go to the Pliki section instead, so the page does not stay on the login form.
+   */
+  function fileTarget() {
+    const m = /^#plik=(.+)$/.exec(location.hash);
+    if (!m || !/^[A-Za-z0-9_~%-][A-Za-z0-9._~%-]*(\/[A-Za-z0-9_~%-][A-Za-z0-9._~%-]*)*$/.test(m[1]) || /%2e|%2f|%5c/i.test(m[1])) return null;
+    return /\.(rvt|ifc|dwg|zip)$/i.test(m[1]) ? scope.href + '#pliki' : scope.href + m[1];
+  }
+
+  // ---------------------------------------------------------------------------------------------- service worker
+  function registerSw() {
+    return (async () => {
+      const reg = await navigator.serviceWorker.register('sw.js', { scope: './' });
+      if (!reg || typeof reg.unregister !== 'function') throw new Error('service worker blocked');
+      await Promise.race([
+        navigator.serviceWorker.ready,
+        new Promise((_, reject) => setTimeout(() => reject(new Error('service worker timeout')), 15000)),
+      ]);
+      return reg;
+    })();
+  }
+
+  // ---------------------------------------------------------------------------------------------- flow
+  async function onSubmit(e) {
+    e.preventDefault();
+    if (busy) return;
+    const password = input.value;
+    if (!password) {
+      showError(S.login.error_empty);
+      input.focus();
+      return;
+    }
+    clearError();
+    setBusy(true);
+    setNote(S.login.busy);
+    try {
+      let lock;
+      try {
+        const res = await fetch('lock.json', { cache: 'no-store', credentials: 'same-origin' });
+        if (!res.ok) throw new Error(String(res.status));
+        lock = await res.json();
+      } catch {
+        throw new UiError(S.login.error_network);
+      }
+      const key = await deriveKey(password, lock.kdf);
+      if (!(await checkKey(key, lock.check))) {
+        setBusy(false);
+        setNote('');
+        showError(S.login.error_wrong);
+        input.focus();
+        input.select();
+        return;
+      }
+      setNote(S.login.opening);
+      submit.textContent = S.login.opening;
+      await putRec('key', { key, created: Date.now(), salt: lock.kdf.salt });
+      try {
+        await (swReady || registerSw());
+      } catch {
+        await delRec('key').catch(() => {});
+        showUnsupported();
+        return;
+      }
+      input.type = 'password';
+      clearGuard();
+      const target = fileTarget();
+      if (target) location.replace(target); // a direct file link (via 404.html)
+      else location.reload(); // the service worker now serves the site; the hash (deep link) is kept
+    } catch (err) {
+      setBusy(false);
+      setNote('');
+      showError(err instanceof UiError ? err.message : S.login.error_generic);
+    }
+  }
+
+  async function boot() {
+    if (window.top !== window.self) {
+      show('framed'); // never take a password inside another site's frame
+      return;
+    }
+    const params = new URLSearchParams(location.search);
+    const logout = params.has('wyloguj');
+    if (logout) {
+      params.delete('wyloguj');
+      const q = params.toString();
+      history.replaceState(history.state, '', location.pathname + (q ? '?' + q : '') + location.hash);
+    }
+    if (!supported()) return showUnsupported();
+    let text = '';
+    try {
+      if (logout) {
+        await delRec('key');
+        text = S.login.logged_out;
+      }
+      const reason = await getRec('reason');
+      if (reason) {
+        await delRec('reason');
+        if (!logout && (reason === 'expired' || reason === 'changed')) text = S.login[reason];
+      }
+      const rec = await getRec('key');
+      if (rec) {
+        const age = Date.now() - rec.created;
+        if (!(age >= -CLOCK_SKEW && age <= MAX_AGE)) {
+          await delRec('key');
+          text = S.login.expired;
+        } else if (!controlled && !guardActive()) {
+          // A key exists but this page was not served by the service worker (hard reload, or the worker was
+          // removed): register it and reload once. The guard stops a loop if the worker still does not serve.
+          // (A controlled page with a key means the worker chose not to serve, e.g. offline: show the form.)
+          setGuard();
+          setNote(S.login.opening);
+          try {
+            await registerSw();
+          } catch {
+            return showUnsupported();
+          }
+          location.reload();
+          return;
+        } else {
+          // 'updating': the worker kept the key but could not open this build yet (a publish in progress, L01)
+          text = reason === 'updating' ? S.login.updating || S.login.reopen_failed : S.login.reopen_failed;
+        }
+      }
+    } catch {
+      return showUnsupported(); // IndexedDB unavailable
+    }
+    clearGuard();
+    showForm(text);
+    swReady = registerSw();
+    swReady.catch(() => showUnsupported());
+  }
+
+  $('toggle').addEventListener('click', () => {
+    const reveal = input.type === 'password';
+    input.type = reveal ? 'text' : 'password';
+    $('toggle-text').textContent = reveal ? S.login.hide : S.login.show;
+    input.focus();
+  });
+
+  $('copy').addEventListener('click', async () => {
+    const field = $('url');
+    const status = $('copy-status');
+    let ok = false;
+    try {
+      await navigator.clipboard.writeText(field.value);
+      ok = true;
+    } catch {
+      try {
+        field.focus();
+        field.select();
+        ok = document.execCommand('copy');
+      } catch {
+        ok = false;
+      }
+    }
+    status.textContent = ok ? S.unsupported.copied : S.unsupported.copy_failed;
+    if (!ok) {
+      field.focus();
+      field.select();
+    }
+  });
+
+  form.addEventListener('submit', onSubmit);
+  boot();
+})();</script>
+</body>
+</html>
