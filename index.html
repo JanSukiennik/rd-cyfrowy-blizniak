@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-BgGDnNYv7c/Y2RsUCskHVgu4qD+6YI6qBnBOzbg+2dU='; style-src 'sha256-Bk/z/q052fFxmjOuaRKyITulj0OUVPDWe8Ryhw0CnsM='; img-src 'self'; connect-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-vvpi6UTCWySc0dsvdoXXhNkPXrq6r3yE2q1k8GOJP6E='; style-src 'sha256-Bk/z/q052fFxmjOuaRKyITulj0OUVPDWe8Ryhw0CnsM='; img-src 'self'; connect-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <meta name="referrer" content="no-referrer">
@@ -214,8 +214,7 @@ p, h1, h2 { margin: 0; }
 </div>
 <script>(() => {
   'use strict';
-  // Strings come from lock/strings.pl.json (injected at lock time).
-  const S = {"meta":{"title":"Cyfrowy bliźniak biura R&D","description":"Model BIM, chmura punktów i siatka 3D biura R&D, zbudowane ze skanu 3D. Dostęp chroniony hasłem.","og_image_alt":"Logo R&D i napis: Cyfrowy bliźniak biura R&D","logo_alt":"R&D – Retail and Development","noscript":"Ta strona wymaga włączonej obsługi JavaScript."},"login":{"eyebrow":"Dostęp chroniony hasłem","title":"Cyfrowy bliźniak biura R&D","lede":"Wpisz hasło, aby otworzyć model biura i pliki do pobrania.","label":"Hasło","show":"Pokaż","hide":"Ukryj","toggle_suffix":" hasło","submit":"Wejdź","busy":"Sprawdzam hasło…","opening":"Otwieram stronę…","error_empty":"Wpisz hasło.","error_wrong":"Nieprawidłowe hasło. Sprawdź je i spróbuj ponownie.","error_network":"Nie udało się połączyć ze stroną. Sprawdź połączenie z internetem i spróbuj ponownie.","error_generic":"Nie udało się otworzyć strony. Odśwież ją i spróbuj ponownie.","reopen_failed":"Nie udało się otworzyć strony mimo zapamiętanego hasła. Wpisz hasło ponownie.","remember":"Hasło zostanie zapamiętane na tym urządzeniu do 30 dni.","contact":"Nie mają Państwo hasła? Prosimy o wiadomość na adres hello@rd.studio.","logged_out":"Wylogowano. Hasło zostało usunięte z tego urządzenia.","expired":"Minęło 30 dni od ostatniego logowania. Wpisz hasło ponownie.","changed":"Hasło do strony zostało zmienione. Wpisz nowe hasło.","updating":"Strona jest właśnie aktualizowana. Spróbuj ponownie za kilka minut."},"unsupported":{"title":"Otwórz link w innej przeglądarce","body":"Ta strona jest zaszyfrowana. Do jej odczytania potrzebne są funkcje, których ta przeglądarka nie udostępnia. Zdarza się to w przeglądarkach wbudowanych w aplikacje i w oknach prywatnych.","action":"Otwórz link w Safari, Chrome, Edge lub Firefox w zwykłym oknie. Jeśli to nie pomoże, zaktualizuj przeglądarkę.","url_label":"Adres strony","copy":"Kopiuj link","copied":"Link skopiowany.","copy_failed":"Nie udało się skopiować. Zaznacz adres powyżej i skopiuj go ręcznie."},"framed":{"title":"Otwórz stronę w osobnym oknie","body":"Ze względów bezpieczeństwa logowanie nie działa w ramce innej strony.","link":"Otwórz stronę logowania"},"notfound":{"title":"Przekierowanie","link":"Przejdź do strony logowania"},"og":{"title":"Cyfrowy bliźniak biura R&D","subtitle":"Dostęp chroniony hasłem"}};
+  const S = {"meta":{"title":"Cyfrowy bliźniak biura R&D","description":"Model BIM, chmura punktów i siatka 3D biura R&D, zbudowane ze skanu 3D. Dostęp chroniony hasłem.","og_image_alt":"Logo R&D i napis: Cyfrowy bliźniak biura R&D","logo_alt":"R&D – Retail and Development","noscript":"Ta strona wymaga włączonej obsługi JavaScript."},"login":{"eyebrow":"Dostęp chroniony hasłem","title":"Cyfrowy bliźniak biura R&D","lede":"Wpisz hasło, aby otworzyć model biura i pliki do pobrania.","label":"Hasło","show":"Pokaż","hide":"Ukryj","toggle_suffix":" hasło","submit":"Wejdź","busy":"Sprawdzam hasło…","opening":"Otwieram stronę…","error_empty":"Wpisz hasło.","error_wrong":"Nieprawidłowe hasło. Sprawdź je i spróbuj ponownie.","error_network":"Nie udało się połączyć ze stroną. Sprawdź połączenie z internetem i spróbuj ponownie.","error_generic":"Nie udało się otworzyć strony. Odśwież ją i spróbuj ponownie.","reopen_failed":"Nie udało się otworzyć strony mimo zapamiętanego hasła. Wpisz hasło ponownie.","remember":"Hasło zostanie zapamiętane na tym urządzeniu do 30 dni.","contact":"Nie mają Państwo hasła? Prosimy o wiadomość na adres hello@rd.studio.","logged_out":"Wylogowano. Hasło zostało usunięte z tego urządzenia.","expired":"Minęło 30 dni od ostatniego logowania. Wpisz hasło ponownie.","changed":"Hasło do strony zostało zmienione. Wpisz nowe hasło.","updating":"Strona jest właśnie aktualizowana. Spróbuj ponownie za kilka minut."},"unsupported":{"title":"Otwórz link w innej przeglądarce","body":"Ta strona jest zaszyfrowana. Do jej odczytania potrzebne są funkcje, których ta przeglądarka nie udostępnia. Zdarza się to w przeglądarkach wbudowanych w aplikacje i w oknach prywatnych.","action":"Otwórz link w Safari, Chrome, Edge lub Firefox w zwykłym oknie. Jeśli to nie pomoże, zaktualizuj przeglądarkę.","url_label":"Adres strony","copy":"Kopiuj link","copied":"Link skopiowany.","copy_failed":"Nie udało się skopiować. Zaznacz adres powyżej i skopiuj go ręcznie."},"framed":{"title":"Otwórz stronę w osobnym oknie","body":"Ze względów bezpieczeństwa logowanie nie działa w ramce innej strony.","link":"Otwórz stronę logowania"},"failed":{"title":"Nie udało się otworzyć strony","body":"Nie udało się wczytać tej strony ani pliku. Strona mogła być właśnie aktualizowana – odśwież ją za kilka minut.","link":"Wróć do modelu biura"},"notfound":{"title":"Przekierowanie","link":"Przejdź do strony logowania"},"og":{"title":"Cyfrowy bliźniak biura R&D","subtitle":"Dostęp chroniony hasłem"}};
   const MAX_AGE = 30 * 24 * 3600 * 1000;
   const CLOCK_SKEW = 24 * 3600 * 1000;
   const GUARD_MS = 10000;
@@ -234,27 +233,21 @@ p, h1, h2 { margin: 0; }
   const controlled = !!(navigator.serviceWorker && navigator.serviceWorker.controller);
   let busy = false;
   let swReady = null;
-
   class UiError extends Error {}
-
-  // ---------------------------------------------------------------------------------------------- views
   function show(view) {
     $('lede').hidden = view !== 'form';
     form.hidden = view !== 'form';
     $('unsupported').hidden = view !== 'unsupported';
     $('framed').hidden = view !== 'framed';
   }
-
   function setNote(text) {
     note.textContent = text || '';
   }
-
   function showForm(text) {
     show('form');
     setNote(text);
     if (matchMedia('(pointer: fine)').matches) input.focus();
   }
-
   function showUnsupported() {
     busy = false;
     setNote('');
@@ -263,19 +256,15 @@ p, h1, h2 { margin: 0; }
     url.searchParams.delete('wyloguj');
     $('url').value = url.href;
   }
-
   function showError(text) {
-    // clear first so a repeated message is announced again
     errorEl.textContent = '';
     input.setAttribute('aria-invalid', 'true');
     setTimeout(() => (errorEl.textContent = text), 50);
   }
-
   function clearError() {
     errorEl.textContent = '';
     input.removeAttribute('aria-invalid');
   }
-
   function setBusy(on) {
     busy = on;
     form.setAttribute('aria-busy', on ? 'true' : 'false');
@@ -283,8 +272,6 @@ p, h1, h2 { margin: 0; }
     submit.textContent = on ? S.login.busy : S.login.submit;
     input.readOnly = on;
   }
-
-  // ---------------------------------------------------------------------------------------------- storage
   function idb(mode, fn) {
     return new Promise((resolve, reject) => {
       const open = indexedDB.open(DB_NAME, 1);
@@ -318,13 +305,12 @@ p, h1, h2 { margin: 0; }
   const getRec = (k) => idb('readonly', (s) => s.get(k));
   const putRec = (k, v) => idb('readwrite', (s) => s.put(v, k));
   const delRec = (k) => idb('readwrite', (s) => s.delete(k));
-
   function guardActive() {
     try {
       const t = Number(sessionStorage.getItem(GUARD_KEY));
       return t > 0 && Date.now() - t < GUARD_MS;
     } catch {
-      return true; // no sessionStorage: never auto-reload
+      return true;
     }
   }
   function setGuard() {
@@ -337,8 +323,6 @@ p, h1, h2 { margin: 0; }
       sessionStorage.removeItem(GUARD_KEY);
     } catch {}
   }
-
-  // ---------------------------------------------------------------------------------------------- crypto
   function supported() {
     return (
       window.isSecureContext === true &&
@@ -351,14 +335,12 @@ p, h1, h2 { margin: 0; }
       typeof DecompressionStream === 'function'
     );
   }
-
   function b64(s) {
     const bin = atob(s);
     const out = new Uint8Array(bin.length);
     for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
     return out;
   }
-
   async function deriveKey(password, kdf) {
     if (!kdf || kdf.name !== 'PBKDF2' || kdf.hash !== 'SHA-256' || !(kdf.iterations >= 100000)) throw new UiError(S.login.error_generic);
     const base = await crypto.subtle.importKey('raw', enc.encode(password.normalize('NFC')), 'PBKDF2', false, ['deriveKey']);
@@ -366,11 +348,10 @@ p, h1, h2 { margin: 0; }
       { name: 'PBKDF2', hash: 'SHA-256', salt: b64(kdf.salt), iterations: kdf.iterations },
       base,
       { name: 'AES-GCM', length: 256 },
-      false, // non-extractable
+      false,
       ['decrypt'],
     );
   }
-
   async function checkKey(key, checkB64) {
     try {
       const blob = b64(checkB64);
@@ -383,19 +364,11 @@ p, h1, h2 { margin: 0; }
       return false;
     }
   }
-
-  /**
-   * A direct file link opened without a key comes back from 404.html as #plik=<path inside the site> (T60). Only plain
-   * relative paths are accepted (no dot segments, encoded dots/slashes or schemes), so this is never an open redirect.
-   * Downloads (attachments) go to the Pliki section instead, so the page does not stay on the login form.
-   */
   function fileTarget() {
     const m = /^#plik=(.+)$/.exec(location.hash);
     if (!m || !/^[A-Za-z0-9_~%-][A-Za-z0-9._~%-]*(\/[A-Za-z0-9_~%-][A-Za-z0-9._~%-]*)*$/.test(m[1]) || /%2e|%2f|%5c/i.test(m[1])) return null;
     return /\.(rvt|ifc|dwg|zip)$/i.test(m[1]) ? scope.href + '#pliki' : scope.href + m[1];
   }
-
-  // ---------------------------------------------------------------------------------------------- service worker
   function registerSw() {
     return (async () => {
       const reg = await navigator.serviceWorker.register('sw.js', { scope: './' });
@@ -407,8 +380,6 @@ p, h1, h2 { margin: 0; }
       return reg;
     })();
   }
-
-  // ---------------------------------------------------------------------------------------------- flow
   async function onSubmit(e) {
     e.preventDefault();
     if (busy) return;
@@ -452,18 +423,17 @@ p, h1, h2 { margin: 0; }
       input.type = 'password';
       clearGuard();
       const target = fileTarget();
-      if (target) location.replace(target); // a direct file link (via 404.html)
-      else location.reload(); // the service worker now serves the site; the hash (deep link) is kept
+      if (target) location.replace(target);
+      else location.reload();
     } catch (err) {
       setBusy(false);
       setNote('');
       showError(err instanceof UiError ? err.message : S.login.error_generic);
     }
   }
-
   async function boot() {
     if (window.top !== window.self) {
-      show('framed'); // never take a password inside another site's frame
+      show('framed');
       return;
     }
     const params = new URLSearchParams(location.search);
@@ -492,9 +462,6 @@ p, h1, h2 { margin: 0; }
           await delRec('key');
           text = S.login.expired;
         } else if (!controlled && !guardActive()) {
-          // A key exists but this page was not served by the service worker (hard reload, or the worker was
-          // removed): register it and reload once. The guard stops a loop if the worker still does not serve.
-          // (A controlled page with a key means the worker chose not to serve, e.g. offline: show the form.)
           setGuard();
           setNote(S.login.opening);
           try {
@@ -505,26 +472,23 @@ p, h1, h2 { margin: 0; }
           location.reload();
           return;
         } else {
-          // 'updating': the worker kept the key but could not open this build yet (a publish in progress, L01)
           text = reason === 'updating' ? S.login.updating || S.login.reopen_failed : S.login.reopen_failed;
         }
       }
     } catch {
-      return showUnsupported(); // IndexedDB unavailable
+      return showUnsupported();
     }
     clearGuard();
     showForm(text);
     swReady = registerSw();
     swReady.catch(() => showUnsupported());
   }
-
   $('toggle').addEventListener('click', () => {
     const reveal = input.type === 'password';
     input.type = reveal ? 'text' : 'password';
     $('toggle-text').textContent = reveal ? S.login.hide : S.login.show;
     input.focus();
   });
-
   $('copy').addEventListener('click', async () => {
     const field = $('url');
     const status = $('copy-status');
@@ -547,7 +511,6 @@ p, h1, h2 { margin: 0; }
       field.select();
     }
   });
-
   form.addEventListener('submit', onSubmit);
   boot();
 })();</script>
